@@ -1,0 +1,86 @@
+// ICONS
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+
+
+$warningBgDefault: #ffd400;
+$warningBgLight: #fde77a;
+$warningBgDark: #e2bc00;
+$warningTextDefault: #8d7600;
+$warningTextLight: #ffdb28;
+$warningTextDark: #695800;
+
+$errorBgDefault: #f54545;
+$errorBgLight: #ff9292;
+$errorBgDark: #f72929;
+$errorTextDefault: #520000;
+$errorTextLight: #ff5959;
+$errorTextDark: #4e0000;
+
+$successBgDefault: #38d467;
+$successBgLight: #94fabf;
+$successBgDark: #30e767;
+$successTextDefault: #0d532a;
+$successTextLight: #41cc7b;
+$successTextDark: #166336;
+
+$infoBgDefault: #008cff;
+$infoBgLight: #84c1f3;
+$infoBgDark: #007ee6;
+$infoTextDefault: #094a80;
+$infoTextLight: #3d9ff0;
+$infoTextDark: #0d2e49;
+
+
+/////////////////////////////////////////////////////
+
+@mixin modalComponent() {
+    user-select: none;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    left: 50%;
+    top: 4rem;
+
+    z-index: 999;
+    padding: .8rem 1.2rem;
+    
+    font-size: 1.1rem;
+    font-family: Inter, sans-serif;
+    border: 2px solid #000;
+    border-radius: 1rem;
+
+    .close {
+        top: -.3rem;
+        right: -.8rem;
+        font-size: .6rem;
+        padding: .2rem;
+
+        cursor: pointer;
+        position: relative;
+        float: right;
+    }
+}
+
+.ez {
+    // ICON
+    .fi {
+        margin-right: .5rem;
+        position: relative;
+        top: 2px;
+    }
+
+    &-warning {
+        @include modalComponent();
+
+        color: $warningTextDefault;
+        background-color: $warningBgDefault;
+        border-color: $warningTextDefault;
+    }
+
+    &-error {
+        @include modalComponent();
+    }
+
+    // &-success {}
+
+    // &-info {}
+}

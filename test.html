@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <button class="open-modal" data-modal="modal1">Open Modal 1</button>
+    <button class="open-modal" data-modal="modal2">Open Modal 2</button>
+
+    <div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Modal 1</h2>
+        <p>This is the first modal.</p>
+        <button class="open-modal" data-modal="modal2">Open Modal 2</button>
+    </div>
+    </div>
+
+    <div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Modal 2</h2>
+        <p>This is the second modal stacked on top.</p>
+    </div>
+    </div>
+
+    <main>
+        <h1>Welcome to My Website</h1>
+        <p>This is a sample website with a modal stack.</p>
+
+        <p>Click the buttons below to open modals.</p>
+    </main>
+</body>
+</html>
+
+
+<script>
+    const openButtons = document.querySelectorAll('.open-modal');
+    const closeButtons = document.querySelectorAll('.close-modal');
+    const modalStack = [];
+
+    openButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalId = btn.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          // Add to stack
+          modalStack.push(modal);
+          modal.style.zIndex = 1000 + modalStack.length;
+          modal.style.display = 'block';
+        }
+      });
+    });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modal = btn.closest('.modal');
+        if (modal) {
+          modal.style.display = 'none';
+          // Remove from stack
+          const index = modalStack.indexOf(modal);
+          if (index !== -1) modalStack.splice(index, 1);
+        }
+      });
+    });
+
+    // Optional: Close when clicking outside modal content
+    window.addEventListener('click', (e) => {
+      modalStack.slice().reverse().forEach(modal => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          modalStack.pop();
+        }
+      });
+    });
+</script>

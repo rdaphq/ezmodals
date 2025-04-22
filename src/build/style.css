@@ -1,0 +1,55 @@
+@import url("https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css");
+.ez .fi {
+  margin-right: 0.5rem;
+  position: relative;
+  top: 2px;
+}
+.ez-warning {
+  user-select: none;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  left: 50%;
+  top: 4rem;
+  z-index: 999;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+  font-family: Inter, sans-serif;
+  border: 2px solid #000;
+  border-radius: 1rem;
+  color: #8d7600;
+  background-color: #ffd400;
+  border-color: #8d7600;
+}
+.ez-warning .close {
+  top: -0.3rem;
+  right: -0.8rem;
+  font-size: 0.6rem;
+  padding: 0.2rem;
+  cursor: pointer;
+  position: relative;
+  float: right;
+}
+.ez-error {
+  user-select: none;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  left: 50%;
+  top: 4rem;
+  z-index: 999;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.1rem;
+  font-family: Inter, sans-serif;
+  border: 2px solid #000;
+  border-radius: 1rem;
+}
+.ez-error .close {
+  top: -0.3rem;
+  right: -0.8rem;
+  font-size: 0.6rem;
+  padding: 0.2rem;
+  cursor: pointer;
+  position: relative;
+  float: right;
+}
+
+/*# sourceMappingURL=style.css.map */

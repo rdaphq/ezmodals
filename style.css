@@ -1,0 +1,30 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* Increase dynamically for stacking */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 1rem;
+    position: relative;
+  }
+  
+  .close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
